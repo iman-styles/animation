@@ -1,0 +1,58 @@
+// Animations
+
+/*
+  Rotate switching icon on hover
+*/
+
+@include keyframes('rotate-180') {
+  to {
+    @include transform(rotate(180deg));
+  }
+}
+
+.panel--switching:hover {
+  cursor: pointer;
+  background: #fdfdfd;
+  .rotate-180 {
+    @include animation(rotate-180 ease 0.4s forwards);
+  }
+}
+
+/*
+  Animate plane icon flying away
+*/
+
+@include keyframes('fly-away') {
+  0% { top: 1px; right: 1px; }
+  1% { top: 0; right: 0; }
+  2% { top: -1; right: -1px; }
+  3% { top: 0; right: 0;  }
+  4% { top: 1px; right: 1px; }
+  5% { top: 0; right: 0; }
+  6% { top: -1; right: -1px; }
+  7% { top: 0; right: 0;  }
+  8% { top: 1px; right: 1px; }
+  9% { top: 0; right: 0; }
+  100% { top: -300px; right: -300px;}
+}
+
+/*
+  Fade in
+*/
+
+@include keyframes('fade-in') {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.panel--airplane:hover {
+  background: #fdfdfd;
+
+  .fly-away {
+    @include animation(fly-away ease 3s forwards);
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
