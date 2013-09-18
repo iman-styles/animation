@@ -75,3 +75,13 @@
     opacity:1;
   }
 }
+
+/*
+  slide to the right 50%
+*/
+
+@include keyframes('slide-right') {
+  to {
+    @include transform(translateX(50%));
+  }
+}
