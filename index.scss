@@ -60,7 +60,7 @@
 /*
   pop out
 */
-*
+
 @include keyframes('pop-out') {
   0% {
     @include transform(scale(0));
